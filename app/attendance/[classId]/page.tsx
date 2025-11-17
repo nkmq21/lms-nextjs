@@ -40,9 +40,9 @@ export default function AttendancePage() {
 
   if (!classData) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-zinc-50 dark:bg-zinc-950">
+      <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-50">
         <div className="text-center">
-          <h1 className="mb-4 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+          <h1 className="mb-4 text-2xl font-bold text-slate-900">
             Class not found
           </h1>
           <button
@@ -62,29 +62,29 @@ export default function AttendancePage() {
   const unmarkedCount = students.length - Object.keys(attendance).length;
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-8">
           <button
             onClick={() => router.push('/')}
-            className="mb-4 text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+            className="mb-4 text-sm text-blue-600 hover:text-blue-700"
           >
             ← Back to Classes
           </button>
           <div className="flex items-start justify-between">
             <div>
-              <h1 className="mb-2 text-3xl font-bold text-zinc-900 dark:text-zinc-50">
+              <h1 className="mb-2 text-3xl font-bold text-slate-900">
                 {classData.name}
               </h1>
-              <p className="mb-1 text-lg text-zinc-600 dark:text-zinc-400">
+              <p className="mb-1 text-lg text-slate-600">
                 {classData.subject}
               </p>
-              <p className="text-sm text-zinc-500 dark:text-zinc-500">
+              <p className="text-sm text-slate-500">
                 {classData.schedule}
               </p>
             </div>
             <div className="text-right">
-              <p className="text-sm text-zinc-500 dark:text-zinc-500">
+              <p className="text-sm text-slate-500">
                 {new Date().toLocaleDateString('en-US', {
                   weekday: 'long',
                   year: 'numeric',
@@ -97,27 +97,27 @@ export default function AttendancePage() {
         </div>
 
         <div className="mb-6 grid grid-cols-2 gap-4 md:grid-cols-4">
-          <div className="rounded-lg bg-white p-4 dark:bg-zinc-900">
-            <p className="text-sm text-zinc-500 dark:text-zinc-500">Present</p>
-            <p className="text-2xl font-bold text-green-600 dark:text-green-400">
+          <div className="rounded-lg bg-white p-4 shadow">
+            <p className="text-sm text-slate-500">Present</p>
+            <p className="text-2xl font-bold text-green-600">
               {presentCount}
             </p>
           </div>
-          <div className="rounded-lg bg-white p-4 dark:bg-zinc-900">
-            <p className="text-sm text-zinc-500 dark:text-zinc-500">Late</p>
-            <p className="text-2xl font-bold text-yellow-600 dark:text-yellow-400">
+          <div className="rounded-lg bg-white p-4 shadow">
+            <p className="text-sm text-slate-500">Late</p>
+            <p className="text-2xl font-bold text-yellow-600">
               {lateCount}
             </p>
           </div>
-          <div className="rounded-lg bg-white p-4 dark:bg-zinc-900">
-            <p className="text-sm text-zinc-500 dark:text-zinc-500">Absent</p>
-            <p className="text-2xl font-bold text-red-600 dark:text-red-400">
+          <div className="rounded-lg bg-white p-4 shadow">
+            <p className="text-sm text-slate-500">Absent</p>
+            <p className="text-2xl font-bold text-red-600">
               {absentCount}
             </p>
           </div>
-          <div className="rounded-lg bg-white p-4 dark:bg-zinc-900">
-            <p className="text-sm text-zinc-500 dark:text-zinc-500">Unmarked</p>
-            <p className="text-2xl font-bold text-zinc-600 dark:text-zinc-400">
+          <div className="rounded-lg bg-white p-4 shadow">
+            <p className="text-sm text-slate-500">Unmarked</p>
+            <p className="text-2xl font-bold text-slate-600">
               {unmarkedCount}
             </p>
           </div>
@@ -138,22 +138,22 @@ export default function AttendancePage() {
           </button>
         </div>
 
-        <div className="overflow-hidden rounded-lg bg-white shadow dark:bg-zinc-900">
-          <table className="min-w-full divide-y divide-zinc-200 dark:divide-zinc-800">
-            <thead className="bg-zinc-50 dark:bg-zinc-800">
+        <div className="overflow-hidden rounded-lg bg-white shadow">
+          <table className="min-w-full divide-y divide-slate-200">
+            <thead className="bg-slate-50">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-slate-500">
                   Student Name
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-slate-500">
                   Student ID
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-slate-500">
                   Status
                 </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-zinc-200 bg-white dark:divide-zinc-800 dark:bg-zinc-900">
+            <tbody className="divide-y divide-slate-200 bg-white">
               {students.map((student) => (
                 <AttendanceRow
                   key={student.id}
